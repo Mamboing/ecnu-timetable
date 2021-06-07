@@ -29,7 +29,7 @@ object Parser {
 
         // todo: 不借助服务器，直接在本地解析数据
         val body = FormBody.Builder().add("code", jsCode).build()
-        val request = Request.Builder().url("http://47.103.45.149:5000").post(body).build()
+        val request = Request.Builder().url("http://47.103.45.149:80").post(body).build()
         val client = OkHttpClient()
         client.newCall(request).execute().use {
             val r = it.body!!.string()
